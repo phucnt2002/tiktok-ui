@@ -12,6 +12,7 @@
 }
 
 .inner {
+  padding: 0 var(--default-layout-horizontal-spacer);
   height: 100%;
   width: var(--default-layout-header-width, 1150px);
   display: flex;
@@ -101,4 +102,5 @@
   font-size: 2rem;
   margin-left: 28px;
   background-color: transparent;
+  cursor: pointer;
 }
