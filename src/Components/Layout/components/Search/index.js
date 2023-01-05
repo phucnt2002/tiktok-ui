@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
-import { faCircleXmark, faSpinner } from '@fortawesome/free-solid-svg-icons';
+import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import HeadlessTippy from '@tippyjs/react/headless';
 import classNames from 'classnames/bind';
@@ -18,10 +18,12 @@ function Search() {
   const inputRef = useRef();
 
   useEffect(() => {
-    setTimeout(() => {
-      setSearchResult([1, 2, 3]);
-    }, 0);
-  }, []);
+    fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=hoaa&type=less`)
+      .then((res) => res.json())
+      .then((res) => {
+        console.log(res);
+      });
+  }, [searchValue]);
 
   const handleClear = () => {
     setSearchValue('');
